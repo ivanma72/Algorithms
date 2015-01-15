@@ -17,7 +17,7 @@ void shift_str(char* str, int space_idx, int end_idx, int shift_num);
 
 int main(){
 
-	char test [100] = " hello world! foo bar baz    ";
+	char test [100] = "    ";
 
 	add_amp_twenty(test, strlen(test));
 	cout << test << endl;
