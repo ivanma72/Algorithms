@@ -3,6 +3,21 @@
 
 using namespace std;
 
+string str_compression(string str);
+
+void build_str(string str, string & new_str);
+
+
+int main(){
+
+	string s = "aaaaaaaabcdef";
+
+	cout << str_compression(s) << endl;
+
+	return 0;
+}
+
+
 string str_compression(string str){
 
 	if(str.length() <= 2){
@@ -27,6 +42,15 @@ string str_compression(string str){
 
 	//build new string
 	string new_str;
+
+	build_str(str, new_str);
+
+
+	return new_str;
+}
+
+void build_str(string str, string & new_str){
+	
 	uint curr = 0, next = 1, rep = 1;
 
 	while(next < str.length()){
@@ -45,15 +69,4 @@ string str_compression(string str){
 
 	//take care of last character
 	new_str += (str[curr] + to_string(rep));
-
-	return new_str;
-}
-
-int main(){
-
-	string s = "aaaaaaaabcdef";
-
-	cout << str_compression(s) << endl;
-
-	return 0;
 }
